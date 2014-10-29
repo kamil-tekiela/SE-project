@@ -1,24 +1,41 @@
 #include "accountHolder.h"
 
 int accountHolder::idCounter = 0;
-accountHolder::accountHolder() : id(++idCounter)
-{
-}
+
 accountHolder::accountHolder(string name) : id(++idCounter)
 {
 	this->name = name;
+	myTransponders.push_back(Transponder());
+	myVehicles.push_back(Vehicle("KE00000"));
 }
 
-void accountHolder::setName(std::string name)
+string accountHolder::getName()
 {
-	this->name = name;
-}
-
-void accountHolder::createPayment(int tollNumber){
-	cout << "Creating payment for: " << name <<  endl;
-	payments[0] = Payment(tollNumber);
+	return name;
 }
 
 int accountHolder::getId(){
 	return id;
+}
+
+bool accountHolder::isTransponderId(int transponderId){
+	for(int i=0; i<myTransponders.size(); i++){
+			if(myTransponders.at(i).getId() == transponderId){
+				return true;
+			}
+	}
+	return false;
+}
+
+bool accountHolder::isVehicleReg(string vehicleReg){
+	for(int i=0; i<myVehicles.size(); i++){
+			if(myVehicles.at(i).getRegNo() == vehicleReg){
+				return true;
+			}
+	}
+	return false;
+}
+
+void accountHolder::createTicket(int stationId, int timestamp){
+	myTickets.push_back(Ticket(stationId, timestamp));
 }

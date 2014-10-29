@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "accountHolder.h"
-#include "tollgate.h"
 #include "Vehicle.h"
+#include "TollRoadCollector.h"
 
 using namespace std;

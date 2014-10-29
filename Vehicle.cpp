@@ -1,14 +1,10 @@
 #include "Vehicle.h"
 
 
-Vehicle::Vehicle(string carRegNo, accountHolder& account) : owner(account), regNo(carRegNo)
+Vehicle::Vehicle(string carRegNo) :  regNo(carRegNo)
 {
 }
 
 string Vehicle::getRegNo(){
 	return regNo;
-}
-
-accountHolder Vehicle::getOwner(){
-	return owner;
 }

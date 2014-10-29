@@ -1,15 +1,13 @@
 #pragma once
 #include <string>
-#include "accountHolder.h"
+using namespace std;
 
 class Vehicle
 {
 public:
-	Vehicle(string carRegNo, accountHolder&);
+	Vehicle(string carRegNo);
 	string getRegNo();
-	accountHolder getOwner();
 private:
 	const string regNo;
-	accountHolder& owner;
 };
 

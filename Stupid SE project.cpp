@@ -2,21 +2,15 @@
 
 int main()
 {
-	vector<accountHolder> accounts;
-	accounts.push_back(accountHolder("Chris Meudec"));
+	TollRoadCollector* tollRoadCollector = new TollRoadCollector();
 	
-	vector<Vehicle> vehicles;
-	vehicles.push_back(Vehicle("KE045445", accounts.at(0)));
-
-	tollgate toll1(1);
-
-	//road user enters motorway
-	toll1.enterMotorway("KE045445", vehicles, accounts);
+	tollRoadCollector->vehicleDetected(1, "000", 1, 1);
 	cout << endl;
-	toll1.enterMotorway("KE04445", vehicles, accounts);
+	tollRoadCollector->vehicleDetected(0, "KE00000", 1, 1);
 	cout << endl;
-	toll1.enterMotorway("KE04445", vehicles, accounts);
+	tollRoadCollector->vehicleDetected(10, "000", 1, 1);
 	cout << endl;
 
+	getchar();
 }
 
