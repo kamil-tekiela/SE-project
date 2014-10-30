@@ -6,7 +6,6 @@ accountHolder::accountHolder(string name) : id(++idCounter)
 {
 	this->name = name;
 	myTransponders.push_back(Transponder());
-	myVehicles.push_back(Vehicle("KE00000"));
 }
 
 string accountHolder::getName()
@@ -53,6 +52,13 @@ void accountHolder::_test_displayTickets(){
 		struct tm * now = &tm(); localtime_s(now, &t);
 		cout << "Entry Time: " << now->tm_hour<<':'<<now->tm_min<<' '<<now->tm_mday<<'/'<<now->tm_mon<<'/'<<(now->tm_year+1900) << endl;
 		cout << "Exit Time: " << myTickets.at(i).gettimeDateExit() << endl;
+		cout << endl;
+	}
+}
+
+void accountHolder::_test_displayVehicles(){
+	for(int i=0; i<myVehicles.size(); i++){
+		cout << name << " owns " << myVehicles.at(i).getRegNo() << endl;
 		cout << endl;
 	}
 }

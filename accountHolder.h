@@ -19,6 +19,7 @@ public:
 	bool isVehicleReg(string vehicleReg);
 	void createTicket(int stationId, int timestamp);
 	void _test_displayTickets();
+	void _test_displayVehicles();
 private:
 	string name;
 	static int idCounter;

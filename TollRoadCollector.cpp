@@ -64,3 +64,12 @@ void TollRoadCollector::_test_displayTempAccounts(){
 		myTempAccounts.at(i)._test_display();
 	}
 }
+
+void TollRoadCollector::_test_displayVehiclesForAccountId(int id){
+	for(int i=0; i<myAccounts.size(); i++){
+		if(myAccounts.at(i).getId() == id){ 
+			myAccounts.at(i)._test_displayVehicles();
+			break;
+		}
+	}
+}
