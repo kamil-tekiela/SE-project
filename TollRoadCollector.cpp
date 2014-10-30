@@ -49,3 +49,18 @@ bool TollRoadCollector::enterRegistrationDetails(string carRegistration){
 		myAccounts.at(0).addCar(carRegistration);
 		cout << "Registered new vehicle" << endl;
 }
+
+void TollRoadCollector::_test_displayTicketsForAccountId(int id){
+	for(int i=0; i<myAccounts.size(); i++){
+		if(myAccounts.at(i).getId() == id){ 
+			myAccounts.at(i)._test_displayTickets();
+			break;
+		}
+	}
+}
+
+void TollRoadCollector::_test_displayTempAccounts(){
+	for(int i=0; i<myTempAccounts.size(); i++){
+		myTempAccounts.at(i)._test_display();
+	}
+}

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "Payment.h"
+#include <time.h>
 #include "Transponder.h"
 #include "Vehicle.h"
 #include "Ticket.h"
@@ -18,11 +18,11 @@ public:
 	bool isTransponderId(int transponderId);
 	bool isVehicleReg(string vehicleReg);
 	void createTicket(int stationId, int timestamp);
+	void _test_displayTickets();
 private:
 	string name;
 	static int idCounter;
 	const int id;
-	vector<Payment> myPayments;
 	vector<Transponder> myTransponders;
 	vector<Vehicle> myVehicles;
 	vector<Ticket> myTickets;

@@ -14,6 +14,8 @@ public:
 	TollRoadCollector();
 	void vehicleDetected(int transponderId, string vehicleReg, int timestamp, int stationId);
 	bool enterRegistrationDetails(string carRegistration);
+	void _test_displayTicketsForAccountId(int id);
+	void _test_displayTempAccounts();
 private:
 	vector<accountHolder> myAccounts;
 	vector<TempAccount> myTempAccounts;

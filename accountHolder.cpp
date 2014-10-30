@@ -43,3 +43,16 @@ bool accountHolder::isVehicleReg(string vehicleReg){
 void accountHolder::createTicket(int stationId, int timestamp){
 	myTickets.push_back(Ticket(stationId, timestamp));
 }
+
+void accountHolder::_test_displayTickets(){
+	for(int i=0; i<myTickets.size(); i++){
+		cout << "Ticket id: " << myTickets.at(i).getId() << endl;
+		cout << "Entry Gate: " << myTickets.at(i).getentryGateId() << endl;
+		cout << "Exit Gate: " << myTickets.at(i).getexitGateId() << endl;
+		time_t t = myTickets.at(i).gettimeDateEntry();
+		struct tm * now = &tm(); localtime_s(now, &t);
+		cout << "Entry Time: " << now->tm_hour<<':'<<now->tm_min<<' '<<now->tm_mday<<'/'<<now->tm_mon<<'/'<<(now->tm_year+1900) << endl;
+		cout << "Exit Time: " << myTickets.at(i).gettimeDateExit() << endl;
+		cout << endl;
+	}
+}
