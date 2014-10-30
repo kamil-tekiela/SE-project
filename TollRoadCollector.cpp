@@ -40,3 +40,12 @@ void TollRoadCollector::vehicleDetected(int transponderId, string vehicleReg, in
 		cout << "... created temporary account" << endl;
 	}
 }
+
+bool TollRoadCollector::enterRegistrationDetails(string carRegistration){
+		cout << "... contacting VRA" << endl;
+		string vehicleDetails = "VRA response";
+		if(vehicleDetails == "" ) return false;
+		cout << "Please confirm details...Confirm" << endl;
+		myAccounts.at(0).addCar(carRegistration);
+		cout << "Registered new vehicle" << endl;
+}

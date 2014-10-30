@@ -18,6 +18,10 @@ int accountHolder::getId(){
 	return id;
 }
 
+void accountHolder::addCar(string regNumber){
+	myVehicles.push_back(Vehicle(regNumber));
+}
+
 bool accountHolder::isTransponderId(int transponderId){
 	for(int i=0; i<myTransponders.size(); i++){
 			if(myTransponders.at(i).getId() == transponderId){
